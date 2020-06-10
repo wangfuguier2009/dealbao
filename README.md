@@ -1,26 +1,28 @@
-## dealbao-open-sdk使用：
+## dealbao-open-sdk  Instructions 
 
-## 一、下载方式：
 
-​		composer地址：https://packagist.org/packages/dealbao/service
 
-​		composer 命令：composer require dealbao/service 
+## 一、download：
 
-​		github地址：https://github.com/wangfuguier2009/dealbao
+​		composer url：https://packagist.org/packages/dealbao/service
 
-## 二、使用方式：
+​		composer command：composer require dealbao/service 
 
-​		如你的框架有自动加载，则直接使用
+​		github url：https://github.com/wangfuguier2009/dealbao
 
-​		如框架无法自动加载 require_once '../vendor/autoload.php';#这点的路径使用你自己的路径
+## 二、How to use：
 
-## 三、填写配置:
+​		If your framework has automatic loading, use it directly
 
-​		找到配置文件，config.php,填写你的appid和secret
+​		If the framework cannot automatically load ,then use require_once'../vendor/autoload.php' in your php file; #The path is your own path
 
-### 四、客户端实例化（具体可参考demo）
+## 三、fill config:
 
-##### 		1.获取access_token时
+​		Find the configuration file config.php, fill in your appid and secret
+
+### 四、Client instantiation (refer to demo for details)
+
+##### 		1.get access_token
 
 ```
 #use Dealbao\Open\Client as RequestClient;
@@ -30,7 +32,7 @@
 $Client = new Dealbao\Open\Client();
 ```
 
-​	 这点使用了config里面的配置，如需要自己传入，则使用下面这个方式
+​	 There is another way to not use configuration files
 
 ```
 $config['appid'] = 'your appid';
@@ -41,9 +43,9 @@ $Client = new Dealbao\Open\Client($config);
 
 
 
-##### 		2.请求其他接口时的客户端实例
+##### 		2.Client instance when requesting another interface
 
-​			在实例化的时候，传入access_token
+​			pass in access_token
 
 ```
 //Instantiate the caller
@@ -53,9 +55,9 @@ $Client = new Dealbao\Open\Client($config);
 
 ### 
 
-## 五、请求示例（具体可参考demo）
+## 五、Request example（refer to demo for details）
 
-​		获取语言列表
+#### 		1.Get a list of languages
 
 ```
 //Instantiate the caller
@@ -68,7 +70,7 @@ var_dump($res);
 	
 ```
 
-​		根据分类获取商品列表（其中参数以官网：接口中规定的参数为准）
+#### 		2.Obtain the product list according to the classification (where the parameters are based on the official website: the parameters specified in the interface)
 
 ```
 $param = [];
