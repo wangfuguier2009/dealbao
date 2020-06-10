@@ -1,6 +1,6 @@
 ## dealbao-open-sdk  Instructions 
 
-english document | [中文说明](README_CN.md)
+[english document](README.md) | 中文说明
 
 ## 一、download：
 
