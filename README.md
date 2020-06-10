@@ -70,7 +70,7 @@ var_dump($res);
 	
 ```
 
-#### 		2.Obtain the product list according to the classification (where the parameters are based on the official website: the parameters specified in the interface)
+#### 		2.Obtain the product list according to the classification (where the parameters are based on the official website: the parameters specified in the interface) 
 
 ```
 $param = [];
