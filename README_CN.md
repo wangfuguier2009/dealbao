@@ -2,27 +2,27 @@
 
 [english document](README.md) | 中文说明
 
-## 一、download：
+## 一、下载：
 
-​		composer url：https://packagist.org/packages/dealbao/service
+​		composer地址：https://packagist.org/packages/dealbao/service
 
-​		composer command：composer require dealbao/service 
+​		composer命令：composer require dealbao/service 
 
-​		github url：https://github.com/wangfuguier2009/dealbao
+​		github地址：https://github.com/wangfuguier2009/dealbao
 
-## 二、How to use：
+## 二、使用方法：
 
-​		If your framework has automatic loading, use it directly
+​		如果您的框架具有自动加载功能，请直接使用
 
-​		If the framework cannot automatically load ,then use require_once'../vendor/autoload.php' in your php file; #The path is your own path
+如果框架无法自动加载，请在您的php文件中使用require_once'../ vendor / autoload.php'; ＃路径是你自己的路径
 
-## 三、fill config:
+## 三、填写配置:
 
-​		Find the configuration file config.php, fill in your appid and secret
+​		找到配置文件config.php，并填写您的appid和seret
 
-### 四、Client instantiation (refer to demo for details)
+### 四、客户端实例化（详细请参考demo）
 
-##### 		1.get access_token
+##### 		1.获取access_token
 
 ```
 #use Dealbao\Open\Client as RequestClient;
@@ -32,7 +32,7 @@
 $Client = new Dealbao\Open\Client();
 ```
 
-​	 There is another way to not use configuration files
+​	 另一种不使用配置文件的方法
 
 ```
 $config['appid'] = 'your appid';
@@ -43,9 +43,9 @@ $Client = new Dealbao\Open\Client($config);
 
 
 
-##### 		2.Client instance when requesting another interface
+##### 		2.请求其他接口时的客户端实例
 
-​			pass in access_token
+​			传递access_token
 
 ```
 //Instantiate the caller
@@ -57,7 +57,7 @@ $Client = new Dealbao\Open\Client($config);
 
 ## 五、Request example（refer to demo for details）
 
-#### 		1.Get a list of languages
+#### 		1.获取支持的语言列表
 
 ```
 //Instantiate the caller
@@ -70,7 +70,7 @@ var_dump($res);
 	
 ```
 
-#### 		2.Obtain the product list according to the classification (where the parameters are based on the official website: the parameters specified in the interface) 
+#### 		2.按分类获取产品清单（参数以官网接口参数为准：）
 
 ```
 $param = [];
