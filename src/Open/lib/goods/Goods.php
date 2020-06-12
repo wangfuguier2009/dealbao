@@ -51,6 +51,14 @@ class Goods extends Api
         return $res = $this->request('Goods/getGoodsBySku',$params,'GET');
     }
 
+    /**
+     * get goods detail by sku
+     */
+    public function getGoodsBySpu(array $params)
+    {
+        return $res = $this->request('Goods/getGoodsBySpu', $params, 'GET');
+    }
+
     /**get goods detal by sku_language
      * @param array $params
      */
