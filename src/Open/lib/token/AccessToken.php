@@ -1,8 +1,11 @@
 <?php
+
 namespace Dealbao\Open\lib\token;
+
 use Dealbao\Open\base\Http;
 use Dealbao\Open\core\RequestUrl;
 use Dealbao\Open\Config;
+
 class AccessToken
 {
 
@@ -21,13 +24,14 @@ class AccessToken
     /** 获取access_token
      * @param array $params
      */
-    public function getAccessToken($param = []){
+    public function getAccessToken($param = [])
+    {
 
         $params = [
 
             'authorize_type' => 'authorization_token',
 
-            'refresh' => isset($param['refresh'])?boolval($param['refresh']):false,
+            'refresh' => isset($param['refresh']) ? boolval($param['refresh']) : false,
 
         ];
 
@@ -37,7 +41,8 @@ class AccessToken
     /**刷新token
      * @param array $params
      */
-    public function refreshAccessToken($refresh_token){
+    public function refreshAccessToken($refresh_token)
+    {
 
         $params = [
 
@@ -55,7 +60,8 @@ class AccessToken
      * @param $params
      * @return mixed
      */
-    private function exec($params){
+    private function exec($params)
+    {
 
         $params['appid'] = $this->appId;
 
@@ -63,7 +69,7 @@ class AccessToken
 
         $url = RequestUrl::buildAccessTokenUrl();
 
-        return $this->parseResponse(Http::curlRequest($url,$params));
+        return Http::curlRequest($url, $params);
 
     }
 
@@ -71,12 +77,13 @@ class AccessToken
      * @param $responseData
      * @return mixed
      */
-    private function parseResponse($responseData){
-        
+    private function parseResponse($responseData)
+    {
+
         if (isset($responseData['success']) && $responseData['success']) {
-            
+
             return $responseData['data'];
-            
+
         }
 
         return $responseData;
