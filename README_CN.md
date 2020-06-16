@@ -32,7 +32,7 @@
 $Client = new Dealbao\Open\Client();
 ```
 
-​	 另一种不使用配置文件的方法
+​	 另一种不使用配置文件的方法，直接传递appid和secret去实例化
 
 ```
 $config['appid'] = 'your appid';

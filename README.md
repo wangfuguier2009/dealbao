@@ -32,7 +32,7 @@ english document | [中文说明](README_CN.md)
 $Client = new Dealbao\Open\Client();
 ```
 
-​	 There is another way to not use configuration files
+​	 There is another way to not use configuration files，pass appid and secret to instantiate
 
 ```
 $config['appid'] = 'your appid';
