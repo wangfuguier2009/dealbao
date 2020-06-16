@@ -31,7 +31,7 @@ class AccessToken
 
             'authorize_type' => 'authorization_token',
 
-            'refresh' => isset($param['refresh']) ? boolval($param['refresh']) : false,
+            'refresh' => isset($param['refresh']) ? boolval($param['refresh']) : 0,
 
         ];
 
@@ -52,7 +52,7 @@ class AccessToken
 
         ];
 
-        return $this->exec($params);
+        return $this->exec($params,1);
 
     }
 
@@ -60,15 +60,23 @@ class AccessToken
      * @param $params
      * @return mixed
      */
-    private function exec($params)
+    private function exec($params,$type = 0)
     {
 
         $params['appid'] = $this->appId;
 
         $params['secret'] = $this->appSecret;
 
-        $url = RequestUrl::buildAccessTokenUrl();
+        if($type == 1){
 
+            $url = RequestUrl::buildrefreshTokenUrl();
+
+        }else{
+
+            $url = RequestUrl::buildAccessTokenUrl();
+
+        }
+        
         return Http::curlRequest($url, $params);
 
     }
