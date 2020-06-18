@@ -7,15 +7,9 @@ class Area extends Api
      * @param array $params
      * @return bool|string
      */
-    public function getAreaList(array $params = []){
-        return $res = $this->request('Area/getAreaList',$params,'GET');
+    public function getAllAreaList(array $params = []){
+        return $res = $this->request('Area/getAllAreaList',$params,'GET');
     }
 
-    /**get area list by parent_id
-     * @param array $params
-     * @return bool|string
-     */
-    public function getSubAreaList(array $params = []){
-        return $res = $this->request('Area/getSubAreaList',$params,'GET');
-    }
+
 }

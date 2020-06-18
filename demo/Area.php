@@ -5,21 +5,16 @@ require_once '../vendor/autoload.php';
 // require_once '/path/to/deal-open-sdk/../vendor/autoload.php';
 
 //Instantiate the caller
-$config["access_token"] = 'your access_token';
+$config["access_token"] = 'D455F71BDF68AAA805795FF5A255B400';
 $Client = new Dealbao\Open\Client($config);
 
 //get area list
 $param = [];
 $param['language_id'] = 2;
-$res = $Client->Area->getAreaList($param);
+$res = $Client->Area->getAllAreaList($param);
 var_dump($res);
 
-//get area list by parent_id
-$param = [];
-$param['area_id'] = 1;
-$param['language_id'] = 2;
-$res = $Client->Area->getSubAreaList($param);
-var_dump($res);
+
 
 
 
