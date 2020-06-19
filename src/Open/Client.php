@@ -14,6 +14,7 @@ class Client extends Base{
         lib\serviceprovider\LangServiceProvider::class,
         lib\serviceprovider\CateServiceProvider::class,
         lib\serviceprovider\AreaServiceProvider::class,
-        lib\serviceprovider\GoodsServiceProvider::class
+        lib\serviceprovider\GoodsServiceProvider::class,
+        lib\serviceprovider\CollectServiceProvider::class
     ];
 }
