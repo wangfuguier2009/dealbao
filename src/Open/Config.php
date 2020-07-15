@@ -6,7 +6,8 @@ namespace Dealbao\Open;
  */
 class Config{
 
-    const SECRET = 'lkaf4e4n5ygfl234';
+    const APPID = 'please fill in your appid';
 
-    const APPID = 'kj234nfygfl';
+    const SECRET = 'please fill in your secret';
+
 }

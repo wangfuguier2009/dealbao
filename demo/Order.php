@@ -6,15 +6,17 @@ require_once '../vendor/autoload.php';
 
 //Instantiate the caller
 $config["access_token"] = 'your access_token';
+//$config['secret'] = 'your secret';#在config文件已经填写的，该处可以不填
 $Client = new Dealbao\Open\Client($config);
 
 //get order list
 $param['page'] = 1;
 $param['size'] = 1;
 $param['sort'] = ["order_sn"=>["order"=>"desc"]];
-$param['goods_name'] = '诺基亚';
+$param['order_sn'] = '209478517810081';
+$param['goods_name'] = 'RD05彩屏智能手环心率蓝牙运动手环';
 $param['order_state'] = 'wait_pay';
-$param['order_sn'] = '209117455110020';
+$param['order_sn'] = '209478517810081';
 $param['buyer_name'] = '18166334886';
 $param['shipping_code'] = '';
 $param['buyer_phone'] = '18166334886';
@@ -30,14 +32,15 @@ $time_stamp = time();
 $nonce = md5($time_stamp);
 $param['time_stamp'] = $time_stamp;
 $param['nonce'] = $time_stamp;#不重复随机字符串
-$param['items'] = json_encode(['402f89fc460003_2'=>4,'402f89fc460001_1'=>6,'f507d215020004_6'=>3,'f507d215020004_1'=>7]);
-$param['order_source'] = "app";
-$param['mapping_area'] = ['country_id'=>1,'province_id'=>22,'city_id'=>62,'area_id'=>356];
+$param['items'] = json_encode(['254597101_2'=>1,'265111101_2'=>2]);
+$param['trade_no'] = "GZ1253698542";#第三方订单号
+$param['order_source'] = "app";#用户 user 应用 app
+$param['appid'] = 'kj234nfygfl';#以上是购买人信息
 $param['area_info'] = "中华人民共和国 四川省 邻水县 丰禾镇";
 $param['address'] = "兴明村12对";
 $param['true_name'] = "王权";
 $param['mob_phone'] = "1888888888";
-$param['order_message'] = ['28'=>"备注信息",'30'=>"备注信息"];
+$param['order_message'] = '备注信息';
 $res = $Client->Order->createAppOrder($param);
 var_dump($res);
 

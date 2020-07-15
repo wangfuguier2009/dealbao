@@ -8,10 +8,19 @@ class Api
 {
 
     private $accessToken;
-    
-    public function __construct(string $accessToken)
+
+    protected $secret = '';
+
+    protected $appid = '';
+
+    public function __construct(string $accessToken,$secret = '')
     {
+
         $this->accessToken = $accessToken;
+
+        !empty($secret) && $this->secret = $secret;
+
+
 
     }
 
@@ -23,11 +32,11 @@ class Api
 
         $params['access_token'] = $this->accessToken;
 
-        $signature &&  $params['signature'] = Helper::createSinature($params);
-        //var_dump($params);die;
+        $signature &&  $params['signature'] = Helper::createSinature($params,$this->secret);
+
         $res = Http::curlRequest(RequestUrl::buildRequestUrl($path),$params,$request_type);
-        //var_dump($res);die;
-        !empty($res['signature']) && Helper::checkSignature($res);
+
+        !empty($res['signature']) && Helper::checkSignature($res,$this->secret);
 
         return $res;
     }

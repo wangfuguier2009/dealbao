@@ -18,7 +18,7 @@ var_dump($res);
 //get access_token with refresh_token
 $param['refresh'] = true;
 $res = $Client->AccessToken->getAccessToken($param);
-var_dump($res);
+var_dump($res);die;
 
 //refactor access_tokne with refresh_token
 $refresh_token = "your refresh_token";

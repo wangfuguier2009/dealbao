@@ -10,7 +10,7 @@ class Helper
     /**
      * 创建signature
      */
-    public static function createSinature($param = [],$secret=''){
+    public static function createSinature($param = [],$secret='',$type=0){
 
         if(isset($param['signature']))
 
@@ -18,12 +18,14 @@ class Helper
 
         ksort($param);
 
-        $secret = Config::SECRET;
+        $secret = !empty($secret)?$secret:Config::SECRET;
+
+        empty($secret) && self::returnError();
 
         $str = http_build_query($param,'&');
-        
-        !empty($secret) && $str .= '&secret='.$secret;
-        
+
+        $str .= '&secret='.$secret;
+
         return strtoupper(md5($str));
 
     }
@@ -33,9 +35,9 @@ class Helper
      * @param array $param
      * @return bool
      */
-    public static function checkSignature($param = []){
+    public static function checkSignature($param = [],$secret){
         
-        $signature = self::createSinature($param['data']);
+        $signature = self::createSinature($param['data'],$secret);
 
         if($signature != $param['signature']){
 
