@@ -36,7 +36,7 @@ class Helper
     public static function checkSignature($param = []){
         
         $signature = self::createSinature($param['data']);
-        _p($signature);
+
         if($signature != $param['signature']){
 
             self::returnError();
