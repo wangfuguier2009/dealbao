@@ -36,5 +36,24 @@ class Collect extends Api
         return $res = $this->request('Collect/deleteCollectGoodsBySpu', $param, 'DELETE');
     }
 
+    /**
+     * get collect goods count
+     * @param array $param
+     * @return bool|string
+     */
+    public function getCollectCountByGroup(array $param)
+    {
+        return $res = $this->request('Collect/getCollectCountByGroup', $param, 'GET');
+    }
+
+    /**
+     * get download list
+     * @param array $param
+     * @return bool|string
+     */
+    public function downloadGoodsList(array $param)
+    {
+        return $res = $this->request('Collect/downloadGoodsList', $param, 'GET');
+    }
 
 }

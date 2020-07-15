@@ -15,8 +15,10 @@ class Goods extends Api
         return $res = $this->request('Goods/getGoodsListByCate', $params, 'GET');
     }
 
-    /**search goods list
+    /**
+     * search goods list
      * @param array $params
+     * @return bool|string
      */
     public function searchGoods(array $params)
     {
@@ -33,7 +35,8 @@ class Goods extends Api
         return $res = $this->request('Goods/getGoodsListByCateGroup', $params, 'GET');
     }
 
-    /**get sku stock
+    /**
+     * get sku stock
      * @param array $params
      * @return bool|string
      */
@@ -42,7 +45,8 @@ class Goods extends Api
         return $res = $this->request('Goods/getGoodsSkuStock', $params, 'GET');
     }
 
-    /**batch get sku stock
+    /**
+     * batch get sku stock
      * @param array $params
      * @return bool|string
      */
@@ -51,7 +55,8 @@ class Goods extends Api
         return $res = $this->request('Goods/batchGetGoodsSKuStock', $params, 'GET');
     }
 
-    /**check sku stock
+    /**
+     * check sku stock
      * @param array $params
      * @return bool|string
      */
@@ -60,8 +65,10 @@ class Goods extends Api
         return $res = $this->request('Goods/batchCheckStock', $params, 'GET');
     }
 
-    /**search spu stock
+    /**
+     * search spu stock
      * @param array $params
+     * @return bool|string
      */
     public function getGoodsSpuStock(array $params)
     {
@@ -84,8 +91,10 @@ class Goods extends Api
         return $res = $this->request('Goods/getGoodsBySpu', $params, 'GET');
     }
 
-    /**get goods detal by sku_language
+    /**
+     * get goods detal by sku_language
      * @param array $params
+     * @return bool|string
      */
     public function getGoodsBySkuLanguage(array $params)
     {
