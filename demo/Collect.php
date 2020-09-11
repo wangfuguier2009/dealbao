@@ -13,7 +13,7 @@ $param                = [];
 $param['language_id'] = 2;
 $res                  = $Client->Cate->getGoodsCategory($param);
 var_dump($res);
-die;
+
 $param                = [];
 $param['language_id'] = 2;
 $res                  = $Client->Cate->getGoodsByCollectGroup($param);
