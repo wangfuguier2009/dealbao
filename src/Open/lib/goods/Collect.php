@@ -56,4 +56,14 @@ class Collect extends Api
         return $res = $this->request('Collect/downloadGoodsList', $param, 'GET');
     }
 
+    /**
+     * get download list
+     * @param array $param
+     * @return bool|string
+     */
+    public function getGoodsByCollectGroup(array $param)
+    {
+        return $res = $this->request('Collect/getGoodsByCollectGroup', $param, 'GET');
+    }
+
 }
